@@ -39,7 +39,7 @@ The system captures audio through an electret microphone, amplifies the signal, 
 
 The initial design used passive filters, but were redesigned using cascaded Sallen-Key active filters to achieve greater roll-off and band separation.
 
-![Filter Design](images/filter_design.png)
+![Filter Design](images/FilterDesign.png)
 
 ## Hardware
 
