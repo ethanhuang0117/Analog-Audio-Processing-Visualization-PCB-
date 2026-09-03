@@ -47,6 +47,8 @@ The initial design used passive filters, but were redesigned using cascaded Sall
 
 The circuit operates from a 5 V USB supply. Since audio signals oscillate about a center point, a virtual ground of 2.5V is used to allow the analog signal stages to operate from a single supply.
 
+![Virtual Ground Design](images/VirtualGround.png)
+
 ### Microphone & Preamplifier
 
 A CMA-4544PF-W electret microphone captures the incoming audio signal, which is amplified using an MCP6004 op-amp to provide a suitable signal level for the filter stages.
@@ -58,6 +60,8 @@ The CMA-4544PF-W was chosen because its frequency response of 20Hz-20kHz covers 
 ### Envelope Detection
 
 Each filtered signal passes through an envelope detector to convert the AC waveform into a varying DC voltage proportional to its amplitude.
+
+![Envelope Detection Circuit](images/EnvelopeDetector.png)
 
 ### Comparator & LED Stage
 
