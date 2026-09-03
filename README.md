@@ -111,7 +111,7 @@ $$R_{LPF} = \frac{1}{2\pi \times 905 \times 100 \times 10^{-9}} = 1759\Omega \ap
 | 7 | 5kHz | 10nF | 3.54kHz | 4.7kΩ | 7.07kHz | 2.2kΩ |
 | 8 | 10kHz | 10nF | 7.07kHz | 2.2kΩ | 14.1kHz | 1.1kΩ |
 
-## Hardware
+## Circuit Design
 
 ### Power
 
@@ -177,7 +177,7 @@ The validated circuit was translated into a custom PCB using KiCad, with compone
 
 ### Schematic
 
-The full schematic is available in the repository as a KiCad schematic file
+[View Full Schematic (PDF)](Schematic.pdf)
 
 ## Results
 
