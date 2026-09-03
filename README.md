@@ -4,7 +4,6 @@ A custom analog audio spectrum analyzer PCB that processes microphone audio acro
 
 <p align="center">
   <img src="images/PCB1.png" width="400">
-  <img src="images/PCB2.png" width="400">
 </p>
 
 ## Overview
