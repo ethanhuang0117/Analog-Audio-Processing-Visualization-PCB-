@@ -46,19 +46,25 @@ The initial design used passive filters, but were redesigned using cascaded Sall
 Each frequency band consists of a cascaded 2nd order Sallen-Key High Pass Filter (HPF) and Low Pass Filter (LPF).
 
 **Assumptions:**
-- R1 = R2 = R
-- C1 = C2 = C
-- C = 100nF (Bands 1-4), C = 10nF (Bands 5-8)
+- $R_1 = R_2 = R$
+- $C_1 = C_2 = C$
+- $C = 100\text{nF}$ (Bands 1-4), $C = 10\text{nF}$ (Bands 5-8)
 
-The cutoff frequencies are calculated as:
+The cutoff frequencies are spaced by $\sqrt{2}$ from the centre frequency.
 
 $$f_H = f_0 \times \sqrt{2}$$
 
 $$f_L = \frac{f_0}{\sqrt{2}}$$
 
-The resistor value is then calculated from:
+The general Sallen-Key cutoff frequency formula before simplification is:
+
+$$f = \frac{1}{2\pi\sqrt{R_1 R_2 C_1 C_2}}$$
+
+Applying the assumptions $R_1 = R_2 = R$ and $C_1 = C_2 = C$, this simplifies to:
 
 $$f = \frac{1}{2\pi RC}$$
+
+Rearranging for $R$:
 
 $$R = \frac{1}{2\pi f C}$$
 
@@ -68,19 +74,19 @@ $$R = \frac{1}{2\pi f C}$$
 
 **Step 1: Calculate HPF cutoff frequency**
 
-$$f_L = \frac{f_0}{\sqrt{2}} = \frac{640}{\sqrt{2}} = 453Hz$$
+$$f_L = \frac{f_0}{\sqrt{2}} = \frac{640}{\sqrt{2}} = 453\text{Hz}$$
 
 **Step 2: Calculate LPF cutoff frequency**
 
-$$f_H = f_0 \times \sqrt{2} = 640 \times \sqrt{2} = 905Hz$$
+$$f_H = f_0 \times \sqrt{2} = 640 \times \sqrt{2} = 905\text{Hz}$$
 
-**Step 3: Calculate HPF resistor value (C = 100nF)**
+**Step 3: Calculate HPF resistor value ($C = 100\text{nF}$)**
 
-$$R_{HPF} = \frac{1}{2\pi \times 453 \times 100 \times 10^{-9}} = 3513\Omega \approx 3.6k\Omega$$
+$$R_{HPF} = \frac{1}{2\pi \times 453 \times 100 \times 10^{-9}} = 3513\Omega \approx 3.6\text{k}\Omega$$
 
-**Step 4: Calculate LPF resistor value (C = 100nF)**
+**Step 4: Calculate LPF resistor value ($C = 100\text{nF}$)**
 
-$$R_{LPF} = \frac{1}{2\pi \times 905 \times 100 \times 10^{-9}} = 1759\Omega \approx 1.8k\Omega$$
+$$R_{LPF} = \frac{1}{2\pi \times 905 \times 100 \times 10^{-9}} = 1759\Omega \approx 1.8\text{k}\Omega$$
 
 ---
 
@@ -118,6 +124,12 @@ The CMA-4544PF-W was chosen because its frequency response of 20Hz-20kHz covers 
 Each filtered signal passes through an envelope detector to convert the AC waveform into a varying DC voltage proportional to its amplitude.
 
 ![Envelope Detection Circuit](images/EnvelopeDetector.png)
+
+The RC time constant determines the decay time of the envelope:
+
+$$\tau = R \times C = 47\text{k}\Omega \times 4.7\mu\text{F} = 221\text{ms}$$
+
+This gives a smooth, natural decay that visually tracks the music without flickering too fast or responding too sluggishly.
 
 ### Comparator & LED Stage
 
