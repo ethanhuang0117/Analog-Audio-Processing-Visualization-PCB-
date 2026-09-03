@@ -145,9 +145,6 @@ This gives a smooth, natural decay that visually tracks the music without flicke
 
 Comparator circuits divide each detected signal into four amplitude thresholds. The resulting outputs drive four LEDs per frequency band to provide a 4-level visualization of audio intensity.
 
-<p align="center">
-  <img src="images/comparator_led.jpg">
-</p>
 
 
 ## Prototyping & Testing
@@ -155,7 +152,7 @@ Comparator circuits divide each detected signal into four amplitude thresholds. 
 Individual circuit stages were first tested on breadboards and simulated in Multisim before PCB fabrication.
 
 <p align="center">
-  <img src="images/breadboard.jpg">
+  <img src="images/Breadboard.png" width="500">
 </p>
 
 This iterative testing helped identify design issues before fabrication and reduced the need for PCB rework.
@@ -183,11 +180,8 @@ The full schematic is available in the repository as a KiCad schematic file
 The completed PCB successfully processes audio through the 8 frequency bands and provides visual feedback through the LED array.
 
 <p align="center">
-  <img src="images/completed_pcb.jpg">
-</p>
-
-<p align="center">
-  <img src="images/final_testing.jpg">
+  <img src="images/PCB2.png" width="400">
+  <img src="images/PCB3.png" width="400">
 </p>
 
 ## Design Challenges & Iterations
