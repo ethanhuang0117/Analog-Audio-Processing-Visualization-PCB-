@@ -53,6 +53,8 @@ A CMA-4544PF-W electret microphone captures the incoming audio signal, which is 
 
 The CMA-4544PF-W was chosen because its frequency response of 20Hz-20kHz covers the full audio spectrum.
 
+![Microphone PreAmp Design](images/MicPreAmp.png)
+
 ### Envelope Detection
 
 Each filtered signal passes through an envelope detector to convert the AC waveform into a varying DC voltage proportional to its amplitude.
