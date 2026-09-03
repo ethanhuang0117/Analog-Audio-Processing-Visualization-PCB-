@@ -41,6 +41,62 @@ The initial design used passive filters, but were redesigned using cascaded Sall
 
 ![Filter Design](images/FilterDesign.png)
 
+### Sallen-Key Bandpass Filter Calculations
+
+Each frequency band consists of a cascaded 2nd order Sallen-Key High Pass Filter (HPF) and Low Pass Filter (LPF).
+
+**Assumptions:**
+- R1 = R2 = R
+- C1 = C2 = C
+- C = 100nF (Bands 1-4), C = 10nF (Bands 5-8)
+
+The cutoff frequencies are calculated as:
+
+$$f_H = f_0 \times \sqrt{2}$$
+
+$$f_L = \frac{f_0}{\sqrt{2}}$$
+
+The resistor value is then calculated from:
+
+$$f = \frac{1}{2\pi RC}$$
+
+$$R = \frac{1}{2\pi f C}$$
+
+---
+
+### Band 4 Example (Centre frequency: 640Hz)
+
+**Step 1: Calculate HPF cutoff frequency**
+
+$$f_L = \frac{f_0}{\sqrt{2}} = \frac{640}{\sqrt{2}} = 453Hz$$
+
+**Step 2: Calculate LPF cutoff frequency**
+
+$$f_H = f_0 \times \sqrt{2} = 640 \times \sqrt{2} = 905Hz$$
+
+**Step 3: Calculate HPF resistor value (C = 100nF)**
+
+$$R_{HPF} = \frac{1}{2\pi \times 453 \times 100 \times 10^{-9}} = 3513\Omega \approx 3.6k\Omega$$
+
+**Step 4: Calculate LPF resistor value (C = 100nF)**
+
+$$R_{LPF} = \frac{1}{2\pi \times 905 \times 100 \times 10^{-9}} = 1759\Omega \approx 1.8k\Omega$$
+
+---
+
+### Filter Band Summary
+
+| Band | Centre Frequency | C | HPF Cutoff | HPF R | LPF Cutoff | LPF R |
+|------|-----------------|---|------------|-------|------------|-------|
+| 1 | 80Hz | 100nF | 56.6Hz | 27kΩ | 113Hz | 15kΩ |
+| 2 | 160Hz | 100nF | 113Hz | 15kΩ | 226Hz | 6.8kΩ |
+| 3 | 320Hz | 100nF | 226Hz | 6.8kΩ | 453Hz | 3.6kΩ |
+| 4 | 640Hz | 100nF | 453Hz | 3.6kΩ | 905Hz | 1.8kΩ |
+| 5 | 1.25kHz | 10nF | 884Hz | 18kΩ | 1.77kHz | 9.1kΩ |
+| 6 | 2.5kHz | 10nF | 1.77kHz | 9.1kΩ | 3.54kHz | 4.7kΩ |
+| 7 | 5kHz | 10nF | 3.54kHz | 4.7kΩ | 7.07kHz | 2.2kΩ |
+| 8 | 10kHz | 10nF | 7.07kHz | 2.2kΩ | 14.1kHz | 1.1kΩ |
+
 ## Hardware
 
 ### Power
