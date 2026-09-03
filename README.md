@@ -6,6 +6,10 @@ A custom analog audio spectrum analyzer PCB that processes microphone audio acro
   <img src="images/PCB1.png" width="400">
 </p>
 
+### Demo
+
+[Download and Watch the PCB Demo](images/demo.mp4)
+
 ## Overview
 
 The system captures audio through an electret microphone, amplifies the signal, separates it into 8 frequency bands using active filters, and displays the signal intensity through LED indicators.
@@ -183,10 +187,6 @@ The completed PCB successfully processes audio through the 8 frequency bands and
   <img src="images/PCB2.png" width="400">
   <img src="images/PCB3.png" width="400">
 </p>
-
-### Demo
-
-[Download and Watch the PCB Demo](images/demo.mp4)
 
 ## Design Challenges & Iterations
 
