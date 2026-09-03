@@ -2,15 +2,16 @@
 
 A custom analog audio spectrum analyzer PCB that processes microphone audio across 8 frequency bands and displays signal intensity using 4-level LED indicators.
 
-![Completed PCB](images/completed_pcb.jpg)
+![Completed PCB1](images/PCB1.jpg)
+![Completed PCB2](images/PCB2.jpg)
 
 ## Overview
 
 The system captures audio through an electret microphone, amplifies the signal, separates it into 8 frequency bands using active filters, and displays the signal intensity through LED indicators.
 
-**System Block Diagram:**
+**System Chain:**
 
-![System Block Diagram](images/block_diagram.png)
+Microphone → Preamp → 8-Band Filters → Envelope Detection → Comparators → LED Visualization
 
 ## Features
 
@@ -150,15 +151,15 @@ This iterative testing helped identify design issues before fabrication and redu
 
 The validated circuit was translated into a custom PCB using KiCad, with component placement, routing, and ground pours optimized for a compact and reliable layout.
 
-![PCB Layout](images/pcb_layout.png)
+![PCB Layout](images/PCBLayout.png)
 
 ### 3D PCB View
 
-![3D PCB View](images/pcb_3d.png)
+![3D PCB View](images/3DPCBView.png)
 
 ### Schematic
 
-![Schematic](images/schematic.png)
+The full schematic is available in the repository as a KiCad schematic file
 
 ## Results
 
