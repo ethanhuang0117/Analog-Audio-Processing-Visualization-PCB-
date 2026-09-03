@@ -2,8 +2,10 @@
 
 A custom analog audio spectrum analyzer PCB that processes microphone audio across 8 frequency bands and displays signal intensity using 4-level LED indicators.
 
-![Completed PCB1](images/PCB1.jpg)
-![Completed PCB2](images/PCB2.jpg)
+<p align="center">
+  <img src="images/PCB1.png" width="400">
+  <img src="images/PCB2.png" width="400">
+</p>
 
 ## Overview
 
@@ -40,7 +42,9 @@ Microphone → Preamp → 8-Band Filters → Envelope Detection → Comparators 
 
 The initial design used passive filters, but were redesigned using cascaded Sallen-Key active filters to achieve greater roll-off and band separation.
 
-![Filter Design](images/FilterDesign.png)
+<p align="center">
+  <img src="images/FilterDesign.png">
+</p>
 
 ### Sallen-Key Bandpass Filter Calculations
 
@@ -110,7 +114,9 @@ $$R_{LPF} = \frac{1}{2\pi \times 905 \times 100 \times 10^{-9}} = 1759\Omega \ap
 
 The circuit operates from a 5 V USB supply. Since audio signals oscillate about a center point, a virtual ground of 2.5V is used to allow the analog signal stages to operate from a single supply.
 
-![Virtual Ground Design](images/VirtualGround.png)
+<p align="center">
+  <img src="images/VirtualGround.png">
+</p>
 
 ### Microphone & Preamplifier
 
@@ -118,13 +124,17 @@ A CMA-4544PF-W electret microphone captures the incoming audio signal, which is 
 
 The CMA-4544PF-W was chosen because its frequency response of 20Hz-20kHz covers the full audio spectrum.
 
-![Microphone PreAmp Design](images/MicPreAmp.png)
+<p align="center">
+  <img src="images/MicPreAmp.png">
+</p>
 
 ### Envelope Detection
 
 Each filtered signal passes through an envelope detector to convert the AC waveform into a varying DC voltage proportional to its amplitude.
 
-![Envelope Detection Circuit](images/EnvelopeDetector.png)
+<p align="center">
+  <img src="images/EnvelopeDetector.png">
+</p>
 
 The RC time constant determines the decay time of the envelope:
 
@@ -136,14 +146,18 @@ This gives a smooth, natural decay that visually tracks the music without flicke
 
 Comparator circuits divide each detected signal into four amplitude thresholds. The resulting outputs drive four LEDs per frequency band to provide a 4-level visualization of audio intensity.
 
-![Comparator and LED Stage](images/comparator_led.jpg)
+<p align="center">
+  <img src="images/comparator_led.jpg">
+</p>
 
 
 ## Prototyping & Testing
 
 Individual circuit stages were first tested on breadboards and simulated in Multisim before PCB fabrication.
 
-![Breadboard Prototype](images/breadboard.jpg)
+<p align="center">
+  <img src="images/breadboard.jpg">
+</p>
 
 This iterative testing helped identify design issues before fabrication and reduced the need for PCB rework.
 
@@ -151,11 +165,15 @@ This iterative testing helped identify design issues before fabrication and redu
 
 The validated circuit was translated into a custom PCB using KiCad, with component placement, routing, and ground pours optimized for a compact and reliable layout.
 
-![PCB Layout](images/PCBLayout.png)
+<p align="center">
+  <img src="images/PCBLayout.png" width="500">
+</p>
 
 ### 3D PCB View
 
-![3D PCB View](images/3DPCBView.png)
+<p align="center">
+  <img src="images/3DPCBView.png" width="500">
+</p>
 
 ### Schematic
 
@@ -165,9 +183,13 @@ The full schematic is available in the repository as a KiCad schematic file
 
 The completed PCB successfully processes audio through the 8 frequency bands and provides visual feedback through the LED array.
 
-![Completed PCB](images/completed_pcb.jpg)
+<p align="center">
+  <img src="images/completed_pcb.jpg">
+</p>
 
-![PCB Testing](images/final_testing.jpg)
+<p align="center">
+  <img src="images/final_testing.jpg">
+</p>
 
 ## Design Challenges & Iterations
 
